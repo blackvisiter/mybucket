@@ -1,0 +1,51 @@
+<html>
+
+<script type="text/javascript">
+  function doIt(object,event){
+    var changeDom=document.getElementById("first");
+    var target=event.target.options.selectedIndex;
+    var secondDom=document.getElementById("second");
+    console.log(target);   
+    var options1=new Array(new Option("请选择人名","000"),new Option("NO_1_1","111"),new Option("NO_1_2","222"),new Option("NO_1_3","333"));
+    var options2=new Array(new Option("请选择人名","000"),new Option("NO_2_1","111"),new Option("NO_2_2","222"),new Option("NO_2_3","333"));
+    var options3=new Array(new Option("请选择人名","000"),new Option("NO_3_1","111"),new Option("NO_3_2","2222"),new Option("NO_3_3","333"));
+    
+   if (target==1) {
+    var currentOption=options1;
+   }else if(target==2){
+   	   var currentOption=options2;
+   }
+   else if(target==3){
+   	 var currentOption=options3;
+   }
+
+
+     "options"+"i";
+   for (var i =0; i <currentOption.length; i++) {
+       /**/    
+       secondDom.options[i]=currentOption[i];
+   	  
+   };
+  }
+  function start(){
+    var  jsonData={};
+
+
+     var  options=new Array(new Option("请选择序号","00"),new Option("NO.1","11"),new Option("NO.2","22"),new Option("NO.3","33"));
+     var  first=document.getElementById("first");
+     for(var i=0;i<4;i++){
+          first.options[i]=options[i];
+}
+  }
+
+</script>
+<body onload="start()">
+		<select id="first" name="demo1" onchange="doIt(this,event)">
+		  <option>请选择序号</option>
+		</select>
+		<select id="second" name="demo2" value="demo2">
+		  <option>请选择人名</option>
+		</select>
+</body>
+
+</html>
